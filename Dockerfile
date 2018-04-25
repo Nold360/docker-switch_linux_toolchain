@@ -8,22 +8,26 @@ ENV GCC_ARM https://releases.linaro.org/components/toolchain/binaries/latest-7/a
 ENV PATH $PATH:/opt/toolchain/aarch64-linux-gnu/bin:/opt/toolchain/arm-linux-gnueabi/bin
 
 # Software requirements
-RUN sed -i 's/buster\ main/buster\ main\ non-free/' /etc/apt/sources.list && \
+RUN sed -i 's/sid\ main/sid\ main\ non-free/' /etc/apt/sources.list && \
 	apt-get update && \
 	apt-get -yq --no-install-recommends install \
-    build-essential \
-    libssl-dev \
-    swig \
-    bison \
-    flex \
-    python3 \
-    python-dev \
-    python3-usb \
-    libusb-1.0-0-dev \
+	build-essential \
+	libssl-dev \
+	swig \
+	bison \
+	flex \
+	python3 \
+	python-dev \
+	python3-usb \
+	libusb-1.0-0-dev \
 	zlib1g-dev \
 	bc \
 	firmware-linux \
 	firmware-brcm80211 \
+	cmake \
+	libpci-dev \
+	git \
+	pkg-config \
 	ca-certificates \
 	wget && \
 	apt-get clean
