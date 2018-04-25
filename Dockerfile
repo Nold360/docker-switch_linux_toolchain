@@ -32,3 +32,7 @@ RUN mkdir /opt/toolchain && cd /opt/toolchain && \
 	ln -s gcc*aarch64-linux-gnu aarch64-linux-gnu && \
 	ln -s gcc*arm-linux-gnueabi arm-linux-gnueabi && \
 	rm *.tar.gz
+
+VOLUME /source
+WORKDIR /source
+CMD bash
